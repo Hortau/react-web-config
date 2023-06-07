@@ -64,6 +64,11 @@ However if you want to have Step 2 to work on a `react-native-web` project, you 
   }
 ```
 
+### Publish to GitHub Packages and npmjs
+    npm login --scope=@hortau --auth-type=legacy --registry=https://npm.pkg.github.com
+    npm publish
+    npm publish --@hortau:registry=https://registry.npmjs.org
+
 ### License
 
 MIT

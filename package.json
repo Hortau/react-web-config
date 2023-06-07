@@ -14,6 +14,10 @@
     "type": "git",
     "url": "git+https://github.com/hortau/react-web-config.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "react",
     "native",
