@@ -41,7 +41,7 @@ However if you want to have Step 2 to work on a `react-native-web` project, you 
 ```diff
   // webpack.config.js
 
-+ const ReactWebConfig = require('react-web-config/lib/ReactWebConfig').ReactWebConfig;
++ const ReactWebConfig = require('@hortau/react-web-config/lib/ReactWebConfig').ReactWebConfig;
 + const path = require('path');
 
 + const envFilePath = path.resolve(__dirname, '.env');
@@ -57,17 +57,34 @@ However if you want to have Step 2 to work on a `react-native-web` project, you 
       alias: [
         ...
 +       /* set alias from react-native-config to react-web-config */
-+       'react-native-config': 'react-web-config',
++       'react-native-config': '@hortau/react-web-config',
         'react-native': 'react-native-web'
       ]
     ]
   }
 ```
 
-### Publish to GitHub Packages and npmjs
-    npm login --scope=@hortau --auth-type=legacy --registry=https://npm.pkg.github.com
-    npm publish
-    npm publish --@hortau:registry=https://registry.npmjs.org
+### Development
+
+```sh
+bun install     # install dependencies
+bun run build   # compile src/ to lib/ with bun build
+bun test        # run the test suite with bun:test
+```
+
+### Publish
+
+GitHub Packages
+```sh
+gh auth login --web --scopes "read:packages,write:packages"
+bun publish --dry-run
+```
+
+npmjs.com
+```sh
+bunx npm login
+bunx npm publish --@hortau:registry=https://registry.npmjs.org
+```
 
 ### License
 

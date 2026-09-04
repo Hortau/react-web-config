@@ -1,9 +1,13 @@
-import webpack from 'webpack'
-import { config } from 'dotenv'
+'use strict';
 
-export const ReactWebConfig = function ReactWebConfig(path) {
-  const env = config({ path }).parsed
+const webpack = require('webpack');
+const { config } = require('dotenv');
+
+function ReactWebConfig(path) {
+  const env = config({ path }).parsed;
   return new webpack.DefinePlugin({
     '__REACT_WEB_CONFIG__': JSON.stringify(env)
-  })
+  });
 }
+
+module.exports = { ReactWebConfig };
