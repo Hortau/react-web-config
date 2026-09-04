@@ -77,7 +77,7 @@ bun test        # run the test suite with bun:test
 GitHub Packages
 ```sh
 gh auth login --web --scopes "read:packages,write:packages"
-bun publish --dry-run
+bun publish
 ```
 
 npmjs.com
