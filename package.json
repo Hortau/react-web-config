@@ -1,6 +1,6 @@
 {
   "name": "@hortau/react-web-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "react-native-config for web",
   "main": "lib/index.js",
   "exports": {
